@@ -17,10 +17,10 @@ struct convert
 	char *ops;
 	int (*f)(va_list);
 };
-typedef struct convert convert_;
+typedef struct convert _convert;
 
 /* parser fuction is to count the number of characters printed*/
-int parser(const char *format, convert_ f_list[], va_list arg_list);
+int parser(const char *format, _convert f_list[], va_list arg_list);
 /* main function*/
 int _print(const char *format, ...);
 int _write_char(char);
