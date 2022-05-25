@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	int printed_chars;
 
 	conver_t f_list[] = {
@@ -68,6 +69,25 @@ int _printf(const char *format, ...)
 			count++;
 		}
 
+=======
+	unsigned int i = 0, count = 0;
+	va_list valist;
+	int (*f)(va_list);
+
+	if (format == NULL)
+		return (-1);
+
+	va_start(valist, format);
+
+	while (format[i])
+	{
+		for (; format[i] != '%' && format[i]; i++)
+		{
+			_putchar(format[i]);
+			count++;
+		}
+
+>>>>>>> b06e1ae0168bc3e6756c0f54f93106a057d752cc
 		if (!format[i])
 			return (count);
 
@@ -89,5 +109,8 @@ int _printf(const char *format, ...)
 	}
 	va_end(valist);
 	return (count);
+<<<<<<< HEAD
 >>>>>>> 2b48ab73094749fad34d27b5c8ec7e7873e6dc48
+=======
+>>>>>>> b06e1ae0168bc3e6756c0f54f93106a057d752cc
 }
